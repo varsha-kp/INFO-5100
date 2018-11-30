@@ -24,7 +24,14 @@ public class OrganizationDirectory {
         Organization organization = null;
         
         
-        
+        if (type.getValue().equals(OrganizationType.EventHandler.getValue())){
+            organization = new EventHandlerOrganization();
+            organizationList.add(organization);
+        }
+        else if (type.getValue().equals(OrganizationType.Commuter.getValue())){
+            organization = new CommuterOrganization();
+            organizationList.add(organization);
+        }
         
         return organization;
     }
