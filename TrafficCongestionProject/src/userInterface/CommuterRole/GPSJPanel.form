@@ -161,7 +161,7 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Calibri Light" size="18" style="1"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Enjoy your ride through one of these routes"/>
+        <Property name="text" type="java.lang.String" value="Enjoy your ride through one of the below routes:"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="backJButton1">

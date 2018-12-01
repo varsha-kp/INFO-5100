@@ -87,11 +87,11 @@ public class CommuterWorkAreaJPanel extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel1)
-                .addGap(18, 18, 18)
+                .addGap(80, 80, 80)
                 .addComponent(btnGPS)
-                .addGap(18, 18, 18)
+                .addGap(38, 38, 38)
                 .addComponent(btnCongestionProblem)
-                .addContainerGap(197, Short.MAX_VALUE))
+                .addContainerGap(115, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
