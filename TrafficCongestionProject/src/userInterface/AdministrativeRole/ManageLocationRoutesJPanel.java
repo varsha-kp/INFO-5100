@@ -168,6 +168,7 @@ public class ManageLocationRoutesJPanel extends javax.swing.JPanel {
     private void btnAddRouteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddRouteActionPerformed
         String name=txtRouteName.getText();
         String dist=txtDistance.getText();
+        
         if(name.equals("")){
             JOptionPane.showMessageDialog(null, "Can't be added. Input again!", "Blank routename", JOptionPane.ERROR_MESSAGE);
         }
@@ -176,8 +177,6 @@ public class ManageLocationRoutesJPanel extends javax.swing.JPanel {
         }
         else{
             try{
-                
-            
         int distance=Integer.parseInt(txtDistance.getText());
         Route route=location.getRouteDirectory().addRoute();
         route.setRouteName(name);
@@ -192,7 +191,6 @@ public class ManageLocationRoutesJPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_btnAddRouteActionPerformed
 
     private void backJButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backJButton1ActionPerformed
-
         userProcessContainer.remove(this);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.previous(userProcessContainer);
