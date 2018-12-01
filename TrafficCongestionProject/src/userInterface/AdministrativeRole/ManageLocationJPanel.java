@@ -14,65 +14,37 @@ import javax.swing.table.DefaultTableModel;
 
 
 public class ManageLocationJPanel extends javax.swing.JPanel {
+
     private JPanel userProcessContainer;
     private LocationDirectory locationDirectory;
-   
-    private String dest;
-    String value;
-   /**
+    /**
      * Creates new form ManageLocationJPanel
      */
-    
-    public ManageLocationJPanel(JPanel userProcessContainer, LocationDirectory locationDirectory ) {
-       
+    public ManageLocationJPanel(JPanel userProcessContainer, LocationDirectory locationDirectory) {
         initComponents();
-       
         this.userProcessContainer=userProcessContainer;
         this.locationDirectory=locationDirectory;
-        
         populateLocationTable();
-       
     }
     
     public void populateLocationTable()
     {
-        String Location_type = Location_type_jCombobox.getSelectedItem().toString();
-      
-            
+        try{
         DefaultTableModel model = (DefaultTableModel) locationJTable.getModel();
         
         model.setRowCount(0);
         
         for (Location location : locationDirectory.getLocationList()){
-           if(Location_type.equalsIgnoreCase(location.getLocationType())){
-            Object[] row = new Object[2];
-            row[0] = location;  
-            row[1]=location.getLocationType();
+            Object[] row = new Object[1];
+            row[0] = location;            
             model.addRow(row);
         }}
-        
-    
-       
-    
-        
+        catch(Exception e)
+                {
+                    JOptionPane.showMessageDialog(null, "No data as of now");
+                }
     }
-//       public void interpopulateLocationTable()
-//    {
-//        try{
-//        DefaultTableModel model = (DefaultTableModel) locationJTable.getModel();
-//        
-//        model.setRowCount(0);
-//        
-//        for (InterLocation interlocation : interLocationDirectory.getLocationList()){
-//            Object[] row = new Object[1];
-//            row[0] = interlocation;            
-//            model.addRow(row);
-//        }}
-//        catch(Exception e)
-//                {
-//                    JOptionPane.showMessageDialog(null, "No data as of now");
-//                }
-//    }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -90,8 +62,6 @@ public class ManageLocationJPanel extends javax.swing.JPanel {
         jLabel2 = new javax.swing.JLabel();
         btnManageRoute = new javax.swing.JButton();
         backJButton1 = new javax.swing.JButton();
-        Location_type_jCombobox = new javax.swing.JComboBox();
-        jLabel3 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(252, 244, 217));
 
@@ -104,11 +74,11 @@ public class ManageLocationJPanel extends javax.swing.JPanel {
 
             },
             new String [] {
-                "Location Name", "Location_type"
+                "Location Name"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, true
+                false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -146,41 +116,24 @@ public class ManageLocationJPanel extends javax.swing.JPanel {
             }
         });
 
-        Location_type_jCombobox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Intercity", "Withen" }));
-        Location_type_jCombobox.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Location_type_jComboboxActionPerformed(evt);
-            }
-        });
-
-        jLabel3.setText("Location TYpe");
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addContainerGap()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jLabel2)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(txtLocationName, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(jLabel1)))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(57, 57, 57)
-                                .addComponent(btnAddLocation)))
-                        .addGap(75, 75, 75))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jLabel3)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(Location_type_jCombobox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(48, 48, 48)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel1)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel2)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(txtLocationName, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(57, 57, 57)
+                        .addComponent(btnAddLocation)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
@@ -198,10 +151,6 @@ public class ManageLocationJPanel extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(Location_type_jCombobox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel3))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(txtLocationName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel2))
@@ -209,10 +158,10 @@ public class ManageLocationJPanel extends javax.swing.JPanel {
                         .addComponent(btnAddLocation))
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnManageRoute)
-                    .addComponent(backJButton1))
-                .addContainerGap(102, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(backJButton1)
+                    .addComponent(btnManageRoute))
+                .addContainerGap(108, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -231,24 +180,18 @@ public class ManageLocationJPanel extends javax.swing.JPanel {
         {
             JOptionPane.showMessageDialog(null, "Please select a row from the table first", "Warning", JOptionPane.WARNING_MESSAGE);
         }
-       
     }//GEN-LAST:event_btnManageRouteActionPerformed
 
     private void btnAddLocationActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddLocationActionPerformed
-
-           String Location_type = Location_type_jCombobox.getSelectedItem().toString();
-            String name=txtLocationName.getText();
+        String name=txtLocationName.getText();
         if(name.equals("")){
             JOptionPane.showMessageDialog(null, "Can't be added. Input again!", "Blank input", JOptionPane.ERROR_MESSAGE);
         }
         else{
         Location location =locationDirectory.addLocation();
         location.setLocationName(name);
-        location.setLocationType(Location_type);
         txtLocationName.setText("");
         populateLocationTable();}
-
-        
     }//GEN-LAST:event_btnAddLocationActionPerformed
 
     private void backJButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backJButton1ActionPerformed
@@ -258,20 +201,13 @@ public class ManageLocationJPanel extends javax.swing.JPanel {
         layout.previous(userProcessContainer);
     }//GEN-LAST:event_backJButton1ActionPerformed
 
-    private void Location_type_jComboboxActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Location_type_jComboboxActionPerformed
-        // TODO add your handling code here:
-         populateLocationTable();
-    }//GEN-LAST:event_Location_type_jComboboxActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JComboBox Location_type_jCombobox;
     private javax.swing.JButton backJButton1;
     private javax.swing.JButton btnAddLocation;
     private javax.swing.JButton btnManageRoute;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable locationJTable;
     private javax.swing.JTextField txtLocationName;
