@@ -140,7 +140,7 @@ public class GPSJPanel extends javax.swing.JPanel {
         }
 
         jLabel4.setFont(new java.awt.Font("Calibri Light", 1, 18)); // NOI18N
-        jLabel4.setText("Enjoy your ride through one of these routes");
+        jLabel4.setText("Enjoy your ride through one of the below routes:");
 
         backJButton1.setFont(new java.awt.Font("Calibri Light", 1, 18)); // NOI18N
         backJButton1.setText("Back");

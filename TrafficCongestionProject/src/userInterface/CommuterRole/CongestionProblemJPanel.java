@@ -58,7 +58,7 @@ public class CongestionProblemJPanel extends javax.swing.JPanel {
         {
             problemTypeComboBox.addItem(congestionProblem);
         }
-//        populateCongestionProblemTable();
+
     }
     
     public void populateFinalCongestionProblemTable(){
