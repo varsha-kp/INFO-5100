@@ -8,7 +8,6 @@ import business.Organization.Organization;
 import business.Organization.Organization.OrganizationType;
 import business.Organization.OrganizationDirectory;
 import java.awt.CardLayout;
-import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
 
@@ -29,7 +28,7 @@ public class ManageOrganizationJPanel extends javax.swing.JPanel {
         populateTable();
         populateCombo();
     }
-    
+   
     private void populateCombo(){
         organizationJComboBox.removeAllItems();
         for (OrganizationType type : Organization.OrganizationType.values()){
