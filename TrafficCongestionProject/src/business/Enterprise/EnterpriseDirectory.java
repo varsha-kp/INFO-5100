@@ -22,9 +22,25 @@ public class EnterpriseDirectory {
     public Enterprise createAndAddEnterprise(String name, Enterprise.EnterpriseType type){
         Enterprise enterprise = null;
         if (type == Enterprise.EnterpriseType.TrafficCongestionManagement){
-            enterprise = new CongestionManagementEnterprise(name);
+            enterprise = new TrafficCongestionManagement(name);
             enterpriseList.add(enterprise);
+            System.out.println(enterpriseList);
         }
+    else  if (type == Enterprise.EnterpriseType.InputEnterprise){
+            enterprise = new InputEnterprise(name);
+            enterpriseList.add(enterprise);
+            System.out.println(enterpriseList);
+        }
+           else  if (type == Enterprise.EnterpriseType.PoliceDepartment){
+            enterprise = new PoliceDepartment(name);
+            enterpriseList.add(enterprise);
+            System.out.println(enterpriseList);
+        }  
+           else  if (type == Enterprise.EnterpriseType.ConstructionDepartment){
+            enterprise = new ConstructionDepartment(name);
+            enterpriseList.add(enterprise);
+            System.out.println(enterpriseList);
+        } 
         return enterprise;
     }
     
