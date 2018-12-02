@@ -8,14 +8,17 @@ package business.Enterprise;
 import business.Role.Role;
 import java.util.ArrayList;
 
+/**
+ *
+ * @author barkhasamyani
+ */
+public class ConstructionDepartment extends Enterprise {
 
-public class CongestionManagementEnterprise extends Enterprise {
-    
-    public CongestionManagementEnterprise(String name)
-    {
-        super(name,EnterpriseType.TrafficCongestionManagement);
+    public ConstructionDepartment(String name) {
+        super(name,Enterprise.EnterpriseType.ConstructionDepartment);
     }
-
+    
+  
     @Override
     public ArrayList<Role> getSupportedRole() {
         return null;
