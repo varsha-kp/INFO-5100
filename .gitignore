@@ -1,3 +1,6 @@
-/TrafficCongestionProject/nbproject/private/
-/TrafficCongestionProject/build/
-/TrafficCongestionProject/dist/
+**/build/
+**/dist/
+**/nbproject/private
+**/FinalProject/Databank.db4o
+*.csv
+*.db4o
