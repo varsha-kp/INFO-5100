@@ -7,10 +7,14 @@ package userInterface.CommuterRole;
 
 import business.CongestionProblem.CongestionProblem;
 import business.CongestionProblem.CongestionProblemDirectory;
+import business.EcoSystem;
 import business.Enterprise.Enterprise;
+import business.Enterprise.EnterpriseDirectory;
+import business.Enterprise.InputEnterprise;
 import business.Location.Location;
 import business.Location.LocationDirectory;
-import business.Organization.EventHandlerOrganization;
+import business.Network.Network;
+import business.Organization.TrafficCongestionManagementOrganization;
 import business.Organization.Organization;
 import business.Route.Route;
 import business.UserAccount.UserAccount;
@@ -29,16 +33,20 @@ public class CongestionProblemJPanel extends javax.swing.JPanel {
     private LocationDirectory locationDirectory;
     private CongestionProblemDirectory congestionProblemDirectory;
     private Enterprise enterprise;
+    private EcoSystem ecosystem;
     /**
      * Creates new form NewJPanel
      */
-    public CongestionProblemJPanel(JPanel userProcessContainer, CongestionProblemDirectory congestionProblemDirectory, LocationDirectory locationDirectory,UserAccount userAccount,Enterprise enterprise) {
-        initComponents();
+
+    CongestionProblemJPanel(JPanel userProcessContainer, CongestionProblemDirectory congestionProblemDirectory, LocationDirectory locationDirectory, UserAccount userAccount, Enterprise enterprise, EcoSystem ecosystem) {
+      //  throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+     initComponents();
         this.userProcessContainer=userProcessContainer;
         this.userAccount=userAccount;
         this.locationDirectory=locationDirectory;
         this.congestionProblemDirectory=congestionProblemDirectory;
         this.enterprise=enterprise;
+        this.ecosystem=ecosystem;
         populateComboBox();
         populateProblemTypeComboBox();
     }
@@ -58,7 +66,7 @@ public class CongestionProblemJPanel extends javax.swing.JPanel {
         {
             problemTypeComboBox.addItem(congestionProblem);
         }
-
+        
     }
     
     public void populateFinalCongestionProblemTable(){
@@ -68,6 +76,7 @@ public class CongestionProblemJPanel extends javax.swing.JPanel {
         if(destinationLocation!=null)
         {
             for(Route route:destinationLocation.getRouteDirectory().getRouteList()){
+                
                 Object row[]=new Object[7];
                 row[0]=route;
                 row[1]=route.isCongestion();
@@ -245,12 +254,17 @@ public class CongestionProblemJPanel extends javax.swing.JPanel {
             route.setSender(userAccount);
             if(decidingFactor==1){
                 Organization org=null;
-                for(Organization organization : enterprise.getOrganizationDirectory().getOrganizationList()){
-                    if(organization instanceof EventHandlerOrganization){
-                        org=organization;
-                        break;
+                for(Network network:ecosystem.getNetworkList()){
+                    for(Enterprise enter:network.getEnterpriseDirectory().getEnterpriseList()){
+                        for(Organization organization : enter.getOrganizationDirectory().getOrganizationList()){
+                            if(organization instanceof TrafficCongestionManagementOrganization){
+                                org=organization;
+                                    break;
+                            }
+                        }
                     }
                 }
+               
                 if(org!=null){
                     org.getWorkQueue().getWorkRequestList().add(congestionSolutionWorkRequest);
                     userAccount.getWorkQueue().getWorkRequestList().add(congestionSolutionWorkRequest);
