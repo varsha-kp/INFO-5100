@@ -29,9 +29,18 @@ public abstract class Organization {
     
     public enum OrganizationType{
         Admin("Admin Organization"),
-        EventHandler("Event Handler Organization"),
+        TrafficCongestionManagement("Traffic Congestion Management Organization"),
         Commuter("Commuter Organization"),
-        SensorInput("Sensor Input Organization");
+        SystemEngineer("System Engineer Organization"),
+        ConstructionManager("Construction Manager Organization"),
+        ConstructionEmployee("Construction Employee Organization"),
+        PoliceManager("Police Manager Organization"),
+        PoliceEmployee("Police Employee Organization"),
+        PoliceAdmin("Police Admin Organization"),
+        ConstructionAdmin("Construction Admin Organization"),
+        InputEnterpriseAdminOrganization("Input Enterprise Admin Organization");
+        
+        
         private String value;
         private OrganizationType(String value) {
             this.value = value;
