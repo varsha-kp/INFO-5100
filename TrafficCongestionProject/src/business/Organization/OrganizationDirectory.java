@@ -4,6 +4,7 @@
  */
 package business.Organization;
 
+
 import business.Organization.Organization.OrganizationType;
 import java.util.ArrayList;
 
@@ -24,15 +25,42 @@ public class OrganizationDirectory {
         Organization organization = null;
         
         
-        if (type.getValue().equals(OrganizationType.EventHandler.getValue())){
-            organization = new EventHandlerOrganization();
+        if (type.getValue().equals(OrganizationType.TrafficCongestionManagement.getValue())){
+            organization = new TrafficCongestionManagementOrganization();
             organizationList.add(organization);
         }
         else if (type.getValue().equals(OrganizationType.Commuter.getValue())){
             organization = new CommuterOrganization();
             organizationList.add(organization);
         }
-        
+        else if (type.getValue().equals(OrganizationType.SystemEngineer.getValue())){
+            organization = new SystemEngineerOrganization();
+            organizationList.add(organization);
+        }
+          else if (type.getValue().equals(OrganizationType.ConstructionManager.getValue())){
+            organization = new ConstructionManagerOrganization() ;
+            organizationList.add(organization);
+        }
+          else if (type.getValue().equals(OrganizationType.ConstructionEmployee.getValue())){
+            organization = new ConstructionEmployeeOrganization();
+            organizationList.add(organization);
+        }
+         else if (type.getValue().equals(OrganizationType.ConstructionAdmin.getValue())){
+            organization = new PoliceDepartmentEmployeeOrganization();
+            organizationList.add(organization);
+        }
+          else if (type.getValue().equals(OrganizationType.PoliceManager.getValue())){
+            organization = new PoliceDepartmentManagerOrganization();
+            organizationList.add(organization);
+        }
+          else if (type.getValue().equals(OrganizationType.PoliceEmployee.getValue())){
+            organization = new PoliceDepartmentEmployeeOrganization();
+            organizationList.add(organization);
+        }
+         else if (type.getValue().equals(OrganizationType.PoliceAdmin.getValue())){
+            organization = new PoliceDepartmentEmployeeOrganization();
+            organizationList.add(organization);
+        }
         return organization;
     }
     
