@@ -34,9 +34,7 @@ public abstract class Organization {
         SystemEngineer("System Engineer Organization"),
         ConstructionManager("Construction Manager Organization"),
         ConstructionEmployee("Construction Employee Organization"),
-        PoliceManager("Police Manager Organization"),
-        PoliceEmployee("Police Employee Organization"),
-        PoliceAdmin("Police Admin Organization"),
+      
         ConstructionAdmin("Construction Admin Organization"),
         InputEnterpriseAdminOrganization("Input Enterprise Admin Organization");
         
