@@ -3,12 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package userInterface.EventHandlerTeamRole;
+package userInterface.TrafficCongestionManagementRole;
 
 import business.CongestionSolutionEventHandler.CongestionSolutionEventHandler;
 import business.CongestionSolutionEventHandler.CongestionSolutionEventHandlerDirectory;
+import business.EcoSystem;
 import business.Enterprise.Enterprise;
-import business.Organization.EventHandlerOrganization;
+import business.Organization.TrafficCongestionManagementOrganization;
 import business.Route.Route;
 import business.UserAccount.UserAccount;
 import business.WorkQueue.CongestionSolutionWorkRequest;
@@ -18,28 +19,34 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
 
-public class EventHandlerTeamWorkAreaJPanel extends javax.swing.JPanel {
+public class TrafficCongestionManagementWorkAreaJPanel extends javax.swing.JPanel {
     
     private JPanel userProcessContainer;
-    private EventHandlerOrganization organization;
+    private TrafficCongestionManagementOrganization organization;
     private Enterprise enterprise;
     private UserAccount userAccount;
     private CongestionSolutionEventHandlerDirectory congestionSolutionEventHandlerDirectory;
+    private EcoSystem business;
     /**
      * Creates new form EventHandlerTeamWorkAreaJPanel
      */
-    public EventHandlerTeamWorkAreaJPanel(JPanel userProcessContainer, UserAccount account, EventHandlerOrganization organization, Enterprise enterprise) {
+    public TrafficCongestionManagementWorkAreaJPanel(JPanel userProcessContainer, UserAccount account, TrafficCongestionManagementOrganization organization, Enterprise enterprise,EcoSystem business) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
         this.organization = organization;
         this.enterprise = enterprise;
         this.userAccount = account;
+        this.business=business;
         congestionSolutionEventHandlerDirectory=enterprise.getCongestionSolutionEventHandlerDirectory();
         populateEventHandlerTable();
         addCongestionSolutionsEventHandler();
         populateEventHandlerComboBox();
     }
-    
+
+//    public TrafficCongestionManagementWorkAreaJPanel(JPanel userProcessContainer, UserAccount account, TrafficCongestionManagementOrganization trafficCongestionManagementOrganization, Enterprise enterprise, EcoSystem business) {
+//        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+//    }
+//    
     public void populateEventHandlerTable(){
         DefaultTableModel defaultTableModel=(DefaultTableModel)eventHandlerTable.getModel();
         
