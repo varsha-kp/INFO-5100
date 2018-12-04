@@ -9,7 +9,9 @@ import business.Employee.Employee;
 import business.Enterprise.Enterprise;
 import business.Network.Network;
 import business.Organization.Organization;
-import business.Role.AdminRole;
+import business.Role.TrafficCongestionManagementAdminRole;
+import business.Role.InputEnterpriseAdminRole;
+
 import business.UserAccount.UserAccount;
 import java.awt.CardLayout;
 import java.awt.Component;
@@ -280,11 +282,20 @@ public class ManageEnterpriseAdminJPanel extends javax.swing.JPanel {
                     break;
             }
         }
-        
         if(validityEnterprise==true&&validitySystem==true){
         Employee employee = enterprise.getEmployeeDirectory().createEmployee(name);
-        UserAccount account = enterprise.getUserAccountDirectory().createUserAccount(username, password, employee, new AdminRole());
+        if(enterprise.getEnterpriseType().toString().equals("TrafficCongestionManagement")){
+        UserAccount account = enterprise.getUserAccountDirectory().createUserAccount(username, password, employee, new TrafficCongestionManagementAdminRole());
         populateTable();
+        }
+        else  if(enterprise.getEnterpriseType().toString().equalsIgnoreCase("ConstructionDepartment")){
+        UserAccount account = enterprise.getUserAccountDirectory().createUserAccount(username, password, employee, new ConstructionAdminRole());
+        populateTable();
+        }
+        else  if(enterprise.getEnterpriseType().toString().equalsIgnoreCase("InputEnterprise")){
+        UserAccount account = enterprise.getUserAccountDirectory().createUserAccount(username, password, employee, new InputEnterpriseAdminRole());
+        populateTable();
+        }
         }
         else
         {
