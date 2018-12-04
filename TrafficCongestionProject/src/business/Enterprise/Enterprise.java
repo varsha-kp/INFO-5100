@@ -21,8 +21,7 @@ public abstract class Enterprise extends Organization{
     public enum EnterpriseType{
         TrafficCongestionManagement("TrafficCongestionManagement"),
         InputEnterprise("InputEnterprise"),
-        ConstructionDepartment("ConstructionDepartment"),
-        PoliceDepartment("PoliceDepartment");
+        ConstructionDepartment("ConstructionDepartment");
         
         private String value;
 

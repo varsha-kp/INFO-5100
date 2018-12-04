@@ -31,11 +31,6 @@ public class EnterpriseDirectory {
             enterpriseList.add(enterprise);
             System.out.println(enterpriseList);
         }
-           else  if (type == Enterprise.EnterpriseType.PoliceDepartment){
-            enterprise = new PoliceDepartment(name);
-            enterpriseList.add(enterprise);
-            System.out.println(enterpriseList);
-        }  
            else  if (type == Enterprise.EnterpriseType.ConstructionDepartment){
             enterprise = new ConstructionDepartment(name);
             enterpriseList.add(enterprise);
