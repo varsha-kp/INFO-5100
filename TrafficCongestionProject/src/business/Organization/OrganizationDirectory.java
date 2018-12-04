@@ -41,26 +41,7 @@ public class OrganizationDirectory {
             organization = new ConstructionManagerOrganization() ;
             organizationList.add(organization);
         }
-          else if (type.getValue().equals(OrganizationType.ConstructionEmployee.getValue())){
-            organization = new ConstructionEmployeeOrganization();
-            organizationList.add(organization);
-        }
-         else if (type.getValue().equals(OrganizationType.ConstructionAdmin.getValue())){
-            organization = new PoliceDepartmentEmployeeOrganization();
-            organizationList.add(organization);
-        }
-          else if (type.getValue().equals(OrganizationType.PoliceManager.getValue())){
-            organization = new PoliceDepartmentManagerOrganization();
-            organizationList.add(organization);
-        }
-          else if (type.getValue().equals(OrganizationType.PoliceEmployee.getValue())){
-            organization = new PoliceDepartmentEmployeeOrganization();
-            organizationList.add(organization);
-        }
-         else if (type.getValue().equals(OrganizationType.PoliceAdmin.getValue())){
-            organization = new PoliceDepartmentEmployeeOrganization();
-            organizationList.add(organization);
-        }
+         
         return organization;
     }
     
