@@ -5,10 +5,6 @@
  */
 package business.CongestionSolutionConstruction;
 
-/**
- *
- * @author Swarup
- */
 public class CongestionSolutionConstruction {
     private String solutionName;
 
