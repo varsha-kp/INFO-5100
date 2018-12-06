@@ -7,18 +7,22 @@ package business.Role;
 
 import business.EcoSystem;
 import business.Enterprise.Enterprise;
-import business.Organization.EventHandlerOrganization;
+
 import business.Organization.Organization;
 import business.UserAccount.UserAccount;
 import javax.swing.JPanel;
-import userInterface.EventHandlerTeamRole.EventHandlerTeamWorkAreaJPanel;
+import userInterface.AdministrativeRole.ConstructionDepartmentAdminJPanel;
 
 
-public class EventHandlerTeamRole extends Role {
-
+/**
+ *
+ * @author VARSHA PREMANI
+ */
+public class ConstructionAdminRole extends Role{
+      
     @Override
     public JPanel createWorkArea(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, EcoSystem business) {
-        return new EventHandlerTeamWorkAreaJPanel(userProcessContainer, account, (EventHandlerOrganization)organization, enterprise);
+        return new ConstructionDepartmentAdminJPanel(userProcessContainer, enterprise, business);
     }
     
 }
