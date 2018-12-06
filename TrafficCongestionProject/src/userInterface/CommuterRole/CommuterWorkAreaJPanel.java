@@ -6,6 +6,7 @@
 package userInterface.CommuterRole;
 
 import business.CongestionProblem.CongestionProblemDirectory;
+import business.EcoSystem;
 import business.Enterprise.Enterprise;
 import business.Location.LocationDirectory;
 import business.Organization.CommuterOrganization;
@@ -22,10 +23,11 @@ public class CommuterWorkAreaJPanel extends javax.swing.JPanel {
     private UserAccount userAccount;
     private LocationDirectory locationDirectory;
     private CongestionProblemDirectory congestionProblemDirectory;
+    private EcoSystem business;
     /**
      * Creates new form CarDriverWorkAreaJPanel
      */
-    public CommuterWorkAreaJPanel(JPanel userProcessContainer, UserAccount account, CommuterOrganization organization, Enterprise enterprise) {
+    public CommuterWorkAreaJPanel(JPanel userProcessContainer, UserAccount account, CommuterOrganization organization, Enterprise enterprise,EcoSystem business) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
         this.organization = organization;
@@ -103,7 +105,7 @@ public class CommuterWorkAreaJPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_btnGPSActionPerformed
 
     private void btnCongestionProblemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCongestionProblemActionPerformed
-        CongestionProblemJPanel congestionProblemJPanel = new CongestionProblemJPanel(userProcessContainer, congestionProblemDirectory, locationDirectory, userAccount, enterprise);
+        CongestionProblemJPanel congestionProblemJPanel = new CongestionProblemJPanel(userProcessContainer, congestionProblemDirectory, locationDirectory, userAccount, enterprise,business);
         userProcessContainer.add("congestionProblemJPanel", congestionProblemJPanel);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.next(userProcessContainer);

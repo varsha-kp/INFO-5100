@@ -5,7 +5,7 @@
  */
 package business.CongestionSolutionConstruction;
 
-import com.db4o.collections.ActivatableArrayList;
+
 import java.util.ArrayList;
 
 /**
