@@ -6,6 +6,7 @@ package business.Organization;
 
 import business.CongestionProblem.CongestionProblem;
 import business.CongestionProblem.CongestionProblemDirectory;
+import business.CongestionSolutionConstruction.CongestionSolutionConstructionDirectory;
 import business.CongestionSolutionEventHandler.CongestionSolutionEventHandlerDirectory;
 import business.Employee.EmployeeDirectory;
 import business.Location.LocationDirectory;
@@ -23,20 +24,20 @@ public abstract class Organization {
     private UserAccountDirectory userAccountDirectory;
     private LocationDirectory locationDirectory;
     private CongestionProblemDirectory congestionProblemDirectory;
+    private CongestionSolutionConstructionDirectory congestionsolutionconstructiondirectory;
     private CongestionSolutionEventHandlerDirectory congestionSolutionEventHandlerDirectory;
     private int organizationID;
     private static int counter;
     
     public enum OrganizationType{
-        Admin("Admin Organization"),
         TrafficCongestionManagement("Traffic Congestion Management Organization"),
         Commuter("Commuter Organization"),
         SystemEngineer("System Engineer Organization"),
         ConstructionManager("Construction Manager Organization"),
         ConstructionEmployee("Construction Employee Organization"),
-      
-        ConstructionAdmin("Construction Admin Organization"),
-        InputEnterpriseAdminOrganization("Input Enterprise Admin Organization");
+        Government("Government Organization");
+       
+       
         
         
         private String value;
@@ -57,8 +58,17 @@ public abstract class Organization {
         locationDirectory=new LocationDirectory();
         congestionProblemDirectory=new CongestionProblemDirectory();
         congestionSolutionEventHandlerDirectory=new CongestionSolutionEventHandlerDirectory();
+        congestionsolutionconstructiondirectory=new CongestionSolutionConstructionDirectory();
         organizationID = counter;
         ++counter;
+    }
+
+    public CongestionSolutionConstructionDirectory getCongestionsolutionconstructiondirectory() {
+        return congestionsolutionconstructiondirectory;
+    }
+
+    public void setCongestionsolutionconstructiondirectory(CongestionSolutionConstructionDirectory congestionsolutionconstructiondirectory) {
+        this.congestionsolutionconstructiondirectory = congestionsolutionconstructiondirectory;
     }
 
     public abstract ArrayList<Role> getSupportedRole();

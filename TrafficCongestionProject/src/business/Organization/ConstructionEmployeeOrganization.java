@@ -5,14 +5,12 @@
  */
 package business.Organization;
 
-import static business.Organization.Organization.OrganizationType.ConstructionEmployee;
+
+import business.Role.ConstructionEmployeeRole;
 import business.Role.Role;
 import java.util.ArrayList;
-import business.Role.ConstructionEmployeeRole;
-/**
- *
- * @author barkhasamyani
- */
+
+
 public class ConstructionEmployeeOrganization extends Organization {
      public ConstructionEmployeeOrganization() 
     {

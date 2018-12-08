@@ -13,7 +13,6 @@ import business.Enterprise.Enterprise;
 import business.Network.Network;
 import business.Organization.ConstructionManagerOrganization;
 import business.Organization.Organization;
-import business.Organization.TrafficCongestionManagementOrganization;
 import business.Route.Route;
 import business.UserAccount.UserAccount;
 import business.WorkQueue.CongestionSolutionWorkRequest;
@@ -22,7 +21,6 @@ import java.util.Date;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
-
 
 public class ConstructionManagerWorkAreaJPanel extends javax.swing.JPanel {
     
@@ -62,8 +60,6 @@ public class ConstructionManagerWorkAreaJPanel extends javax.swing.JPanel {
                 row[5]=workRequest.getSender();
                 row[6]=workRequest.getReceiver();
                 row[7]=(CongestionSolutionWorkRequest)workRequest;
-               
-//                row[2]=route.getDistance();
                 defaultTableModel.addRow(row);
             
         }
@@ -85,13 +81,6 @@ public class ConstructionManagerWorkAreaJPanel extends javax.swing.JPanel {
         }
     }
     
-//    public void populateConstructionComboBox(){
-//        constructionEmployeeComboBox.removeAllItems();
-//        for(CongestionSolutionConstruction congestionSolutionConstruction:congestionSolutionConstructionDirectory.getCongestionSolutionConstructionList())
-//        {
-//            constructionEmployeeComboBox.addItem(congestionSolutionConstruction);
-//        }
-//    }
     public void populateconstructionEmployeeComboBox()
     {constructionEmployeeComboBox.removeAllItems();
         for(Organization og:enterprise.getOrganizationDirectory().getOrganizationList()){
@@ -101,11 +90,6 @@ public class ConstructionManagerWorkAreaJPanel extends javax.swing.JPanel {
             {
                 constructionEmployeeComboBox.addItem(ua);
             }
-            
-//            if(ua.getRole().equals("business.Role.ConstructionEmployee"))
-//            {
-//                constructionEmployeeComboBox.addIt
-//            }
         }
         }
     }
@@ -119,27 +103,22 @@ public class ConstructionManagerWorkAreaJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        constructionEmployeeComboBox = new javax.swing.JComboBox();
         btnassignemployee = new javax.swing.JButton();
+        constructionEmployeeComboBox = new javax.swing.JComboBox();
         jLabel2 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         constructionTable = new javax.swing.JTable();
 
         setBackground(new java.awt.Color(204, 204, 255));
 
-        jLabel1.setFont(new java.awt.Font("Times New Roman", 3, 18)); // NOI18N
+        jPanel1.setBackground(new java.awt.Color(204, 204, 255));
+
+        jLabel1.setFont(new java.awt.Font("Calibri Light", 1, 18)); // NOI18N
         jLabel1.setText("Construction Manager Work Area:");
 
-        constructionEmployeeComboBox.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        constructionEmployeeComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        constructionEmployeeComboBox.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                constructionEmployeeComboBoxActionPerformed(evt);
-            }
-        });
-
-        btnassignemployee.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        btnassignemployee.setFont(new java.awt.Font("Calibri Light", 1, 18)); // NOI18N
         btnassignemployee.setText("Assign employee");
         btnassignemployee.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -147,7 +126,15 @@ public class ConstructionManagerWorkAreaJPanel extends javax.swing.JPanel {
             }
         });
 
-        jLabel2.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        constructionEmployeeComboBox.setFont(new java.awt.Font("Calibri Light", 1, 18)); // NOI18N
+        constructionEmployeeComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        constructionEmployeeComboBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                constructionEmployeeComboBoxActionPerformed(evt);
+            }
+        });
+
+        jLabel2.setFont(new java.awt.Font("Calibri Light", 1, 18)); // NOI18N
         jLabel2.setText("Select Employee:");
 
         constructionTable.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
@@ -169,76 +156,85 @@ public class ConstructionManagerWorkAreaJPanel extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(constructionTable);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(8, 8, 8)
                         .addComponent(jLabel1))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(143, 143, 143)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(133, 133, 133)
                         .addComponent(btnassignemployee))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(75, 75, 75)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(65, 65, 65)
                         .addComponent(jLabel2)
                         .addGap(41, 41, 41)
-                        .addComponent(constructionEmployeeComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(276, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane1))
+                        .addComponent(constructionEmployeeComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 586, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap())
         );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel1)
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(20, 20, 20)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(constructionEmployeeComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2))
                 .addGap(18, 18, 18)
                 .addComponent(btnassignemployee)
-                .addContainerGap(227, Short.MAX_VALUE))
+                .addContainerGap())
+        );
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
+        this.setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(203, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnassignemployeeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnassignemployeeActionPerformed
         // TODO add your handling code here:
         UserAccount ua=(UserAccount)constructionEmployeeComboBox.getSelectedItem();
-      // CongestionSolutionConstruction congestionSolutionConstruction=(CongestionSolutionConstruction)constructionEmployeeComboBox.getSelectedItem();
         int selectedRow=constructionTable.getSelectedRow();
         if(selectedRow>=0){
         CongestionSolutionWorkRequest workRequest=(CongestionSolutionWorkRequest)constructionTable.getValueAt(selectedRow, 7);
         Route route=(Route)constructionTable.getValueAt(selectedRow,0);
         if(route.isCongestion()==true){
         workRequest.setReceiver(ua);
-       // workRequest.setSolution(congestionSolutionConstruction.getSolutionName());
         Date date= new Date();
         workRequest.setResolveDate(date);
-        
-      //  route.setCongestion(false);
         route.setCongestionProblem("");
-      //  route.setEventHandlerSolution(congestionSolutionConstruction.getSolutionName());
         route.setResolveDate(date);
         route.setReceiver(ua);
         ua.incrementSolved();
         populateConstructionTable();
-       Organization org=null;
+        Organization org=null;
                 for(Network network:business.getNetworkList()){
                     for(Enterprise enter:network.getEnterpriseDirectory().getEnterpriseList()){
                         for(Organization organization : enter.getOrganizationDirectory().getOrganizationList()){
-                         //   System.out.println(organization);
                             if(organization instanceof ConstructionEmployeeOrganization){
                                 org=organization;
                                 System.out.println(org);
                                 break;
-                                    
                             }
                         }
                     }
@@ -250,7 +246,7 @@ public class ConstructionManagerWorkAreaJPanel extends javax.swing.JPanel {
                    populateConstructionTable();
                     JOptionPane.showMessageDialog(null, "Congestion Problem reported successfully", "Succes", JOptionPane.INFORMATION_MESSAGE);
                 }
-        }
+            }
         }
     }//GEN-LAST:event_btnassignemployeeActionPerformed
     
@@ -265,6 +261,7 @@ public class ConstructionManagerWorkAreaJPanel extends javax.swing.JPanel {
     private javax.swing.JTable constructionTable;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
 }
