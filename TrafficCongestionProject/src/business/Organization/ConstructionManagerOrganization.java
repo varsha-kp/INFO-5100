@@ -9,10 +9,7 @@ import business.Role.ConstructionManagerRole;
 import business.Role.Role;
 import java.util.ArrayList;
 
-/**
- *
- * @author barkhasamyani
- */
+
 public class ConstructionManagerOrganization extends Organization {
      public ConstructionManagerOrganization() 
     {
@@ -25,3 +22,5 @@ public class ConstructionManagerOrganization extends Organization {
         roles.add(new ConstructionManagerRole());
         return roles;    }
 }
+    
+
