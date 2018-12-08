@@ -4,6 +4,7 @@
  */
 package userInterface.AdministrativeRole;
 
+import business.Enterprise.Enterprise;
 import business.Organization.Organization;
 import business.Organization.Organization.OrganizationType;
 import business.Organization.OrganizationDirectory;
@@ -16,13 +17,22 @@ public class ManageOrganizationJPanel extends javax.swing.JPanel {
 
     private OrganizationDirectory directory;
     private JPanel userProcessContainer;
-    
+    Enterprise enterprise;
     /**
      * Creates new form ManageOrganizationJPanel
      */
-    public ManageOrganizationJPanel(JPanel userProcessContainer,OrganizationDirectory directory) {
+//    public ManageOrganizationJPanel(JPanel userProcessContainer,OrganizationDirectory directory) {
+//        initComponents();
+//        this.userProcessContainer = userProcessContainer;
+//        this.directory = directory;
+//        
+//        populateTable();
+//        populateCombo();
+//    }
+     public ManageOrganizationJPanel(JPanel userProcessContainer,Enterprise enterprise,OrganizationDirectory directory) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
+        this.enterprise=enterprise;
         this.directory = directory;
         
         populateTable();
