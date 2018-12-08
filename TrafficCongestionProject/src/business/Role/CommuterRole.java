@@ -18,7 +18,8 @@ public class CommuterRole extends Role{
     
     @Override
     public JPanel createWorkArea(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, EcoSystem business) {
-        return new CommuterWorkAreaJPanel(userProcessContainer, account, (CommuterOrganization)organization, enterprise);
+        return new CommuterWorkAreaJPanel(userProcessContainer, account, (CommuterOrganization)organization, enterprise,business);
     }
+    
     
 }
