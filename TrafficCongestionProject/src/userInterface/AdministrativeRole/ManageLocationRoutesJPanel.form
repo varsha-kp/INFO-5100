@@ -155,7 +155,7 @@
     <Component class="javax.swing.JButton" name="btnAddRoute">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Calibri Light" size="18" style="0"/>
+          <Font name="Calibri Light" size="18" style="1"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Add Route"/>
       </Properties>
@@ -181,7 +181,7 @@
     <Component class="javax.swing.JButton" name="backJButton1">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-          <Font name="Calibri Light" size="18" style="0"/>
+          <Font name="Calibri Light" size="18" style="1"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Back"/>
       </Properties>

@@ -21,5 +21,4 @@ public class CommuterRole extends Role{
         return new CommuterWorkAreaJPanel(userProcessContainer, account, (CommuterOrganization)organization, enterprise,business);
     }
     
-    
 }

@@ -14,10 +14,7 @@ import javax.swing.JPanel;
 import business.Network.Network;
 import userInterface.AdministrativeRole.InputEnterpriseAdminJPanel;
 
-/**
- *
- * @author VARSHA PREMANI
- */
+
 public class InputEnterpriseAdminRole extends Role {
     
     public static Organization.OrganizationType[] types = {Organization.OrganizationType.Commuter,Organization.OrganizationType.SystemEngineer};

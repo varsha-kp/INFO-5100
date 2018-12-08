@@ -89,7 +89,7 @@ public class ManageLocationRoutesJPanel extends javax.swing.JPanel {
 
         txtRouteName.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
 
-        btnAddRoute.setFont(new java.awt.Font("Calibri Light", 0, 18)); // NOI18N
+        btnAddRoute.setFont(new java.awt.Font("Calibri Light", 1, 18)); // NOI18N
         btnAddRoute.setText("Add Route");
         btnAddRoute.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -102,7 +102,7 @@ public class ManageLocationRoutesJPanel extends javax.swing.JPanel {
 
         txtDistance.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
 
-        backJButton1.setFont(new java.awt.Font("Calibri Light", 0, 18)); // NOI18N
+        backJButton1.setFont(new java.awt.Font("Calibri Light", 1, 18)); // NOI18N
         backJButton1.setText("Back");
         backJButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -168,7 +168,6 @@ public class ManageLocationRoutesJPanel extends javax.swing.JPanel {
     private void btnAddRouteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddRouteActionPerformed
         String name=txtRouteName.getText();
         String dist=txtDistance.getText();
-        
         if(name.equals("")){
             JOptionPane.showMessageDialog(null, "Can't be added. Input again!", "Blank routename", JOptionPane.ERROR_MESSAGE);
         }
@@ -177,6 +176,8 @@ public class ManageLocationRoutesJPanel extends javax.swing.JPanel {
         }
         else{
             try{
+                
+            
         int distance=Integer.parseInt(txtDistance.getText());
         Route route=location.getRouteDirectory().addRoute();
         route.setRouteName(name);
@@ -191,6 +192,7 @@ public class ManageLocationRoutesJPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_btnAddRouteActionPerformed
 
     private void backJButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backJButton1ActionPerformed
+
         userProcessContainer.remove(this);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.previous(userProcessContainer);

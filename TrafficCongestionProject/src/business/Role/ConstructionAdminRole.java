@@ -14,12 +14,10 @@ import javax.swing.JPanel;
 import userInterface.AdministrativeRole.ConstructionDepartmentAdminJPanel;
 
 
-/**
- *
- * @author VARSHA PREMANI
- */
+
 public class ConstructionAdminRole extends Role{
-      
+     
+    public static Organization.OrganizationType[] types = {Organization.OrganizationType.ConstructionManager,Organization.OrganizationType.ConstructionEmployee};
     @Override
     public JPanel createWorkArea(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, EcoSystem business) {
         return new ConstructionDepartmentAdminJPanel(userProcessContainer, enterprise, business);

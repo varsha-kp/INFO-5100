@@ -8,7 +8,13 @@ import business.Enterprise.Enterprise;
 import business.Organization.Organization;
 import business.Organization.Organization.OrganizationType;
 import business.Organization.OrganizationDirectory;
+import business.Role.ConstructionAdminRole;
+import business.Role.InputEnterpriseAdminRole;
+import business.Role.TrafficCongestionManagementAdminRole;
 import java.awt.CardLayout;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
 
@@ -18,18 +24,11 @@ public class ManageOrganizationJPanel extends javax.swing.JPanel {
     private OrganizationDirectory directory;
     private JPanel userProcessContainer;
     Enterprise enterprise;
+    
     /**
      * Creates new form ManageOrganizationJPanel
      */
-//    public ManageOrganizationJPanel(JPanel userProcessContainer,OrganizationDirectory directory) {
-//        initComponents();
-//        this.userProcessContainer = userProcessContainer;
-//        this.directory = directory;
-//        
-//        populateTable();
-//        populateCombo();
-//    }
-     public ManageOrganizationJPanel(JPanel userProcessContainer,Enterprise enterprise,OrganizationDirectory directory) {
+    public ManageOrganizationJPanel(JPanel userProcessContainer,Enterprise enterprise,OrganizationDirectory directory) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
         this.enterprise=enterprise;
@@ -38,15 +37,37 @@ public class ManageOrganizationJPanel extends javax.swing.JPanel {
         populateTable();
         populateCombo();
     }
-   
+    
     private void populateCombo(){
         organizationJComboBox.removeAllItems();
-        for (OrganizationType type : Organization.OrganizationType.values()){
-            if (!type.getValue().equals(OrganizationType.Admin.getValue()))
-                organizationJComboBox.addItem(type);
+        
+        List<OrganizationType> list = new ArrayList<>();
+        if(enterprise.getEnterpriseType().equals(Enterprise.EnterpriseType.InputEnterprise)){
+            list = Arrays.asList(InputEnterpriseAdminRole.types);
         }
-    }
-
+        else if(enterprise.getEnterpriseType().equals(Enterprise.EnterpriseType.ConstructionDepartment)){
+            list = Arrays.asList(ConstructionAdminRole.types);
+        }
+        else if(enterprise.getEnterpriseType().equals(Enterprise.EnterpriseType.TrafficCongestionManagement)){
+            list = Arrays.asList(TrafficCongestionManagementAdminRole.types);
+        }
+        for (OrganizationType type : OrganizationType.values()){
+            if(enterprise.getEnterpriseType().equals(Enterprise.EnterpriseType.InputEnterprise)){
+               if(!list.contains(type)){
+                    continue;
+                }}
+                else if(enterprise.getEnterpriseType().equals(Enterprise.EnterpriseType.ConstructionDepartment)){
+                    if(!list.contains(type)){
+                        continue;
+                    }}
+                    else if(enterprise.getEnterpriseType().equals(Enterprise.EnterpriseType.TrafficCongestionManagement)){
+                    if(!list.contains(type)){
+                        continue;}
+                    }
+        
+                organizationJComboBox.addItem(type);
+           }
+        }
     private void populateTable(){
         DefaultTableModel model = (DefaultTableModel) organizationJTable.getModel();
         
@@ -116,7 +137,7 @@ public class ManageOrganizationJPanel extends javax.swing.JPanel {
             }
         });
 
-        organizationJComboBox.setFont(new java.awt.Font("Calibri Light", 0, 18)); // NOI18N
+        organizationJComboBox.setFont(new java.awt.Font("Calibri Light", 1, 18)); // NOI18N
         organizationJComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         jLabel1.setFont(new java.awt.Font("Calibri Light", 1, 18)); // NOI18N
@@ -174,13 +195,8 @@ public class ManageOrganizationJPanel extends javax.swing.JPanel {
     private void addJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addJButtonActionPerformed
 
         OrganizationType type = (OrganizationType) organizationJComboBox.getSelectedItem();
-//        if(!directory.checkIfUsernameIsUnique(type)){
             directory.createOrganization(type);
             populateTable();
-//        else
-//        {
-//            JOptionPane.showMessageDialog(null, "Organization already present", "Warning", JOptionPane.WARNING_MESSAGE);
-//        }
     }//GEN-LAST:event_addJButtonActionPerformed
 
     private void backJButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backJButton1ActionPerformed
