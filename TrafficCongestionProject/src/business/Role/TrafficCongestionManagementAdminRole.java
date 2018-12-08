@@ -14,6 +14,7 @@ import userInterface.AdministrativeRole.TrafficCongestionManagementAdminJPanel;
 
 public class TrafficCongestionManagementAdminRole extends Role{
 
+    public static Organization.OrganizationType[] types = {Organization.OrganizationType.TrafficCongestionManagement};
     @Override
     public JPanel createWorkArea(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, EcoSystem business) {
         return new TrafficCongestionManagementAdminJPanel(userProcessContainer, enterprise,business);

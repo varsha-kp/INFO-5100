@@ -15,8 +15,8 @@ import userInterface.SystemAdminWorkArea.SystemAdminWorkAreaJPanel;
 public class SystemAdminRole extends Role{
 
     @Override
-    public JPanel createWorkArea(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, EcoSystem system) {
-        return new SystemAdminWorkAreaJPanel(userProcessContainer, system);
+    public JPanel createWorkArea(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, EcoSystem business) {
+        return new SystemAdminWorkAreaJPanel(userProcessContainer, business);
     }
     
 }

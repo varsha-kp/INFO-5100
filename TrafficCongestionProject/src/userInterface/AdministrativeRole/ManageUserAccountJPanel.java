@@ -9,7 +9,7 @@ import business.Employee.Employee;
 import business.Enterprise.Enterprise;
 import business.Network.Network;
 import business.Organization.Organization;
-import business.Role.AdminRole;
+import business.Role.TrafficCongestionManagementAdminRole;
 import business.Role.Role;
 import business.UserAccount.UserAccount;
 import java.awt.CardLayout;
@@ -28,13 +28,13 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
     private boolean validitySystem;
     private boolean validityEnterprise;
     private boolean validityOrganization;
-    private EcoSystem system;
+    private EcoSystem business;
 
-    public ManageUserAccountJPanel(JPanel container, Enterprise enterprise,EcoSystem system) {
+    public ManageUserAccountJPanel(JPanel container, Enterprise enterprise,EcoSystem business) {
         initComponents();
         this.enterprise = enterprise;
         this.userProcessContainer = container;
-        this.system = system;
+        this.business = business;
 
         popOrganizationComboBox();
        // employeeJComboBox.removeAllItems();
@@ -106,7 +106,7 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
 
         setBackground(new java.awt.Color(252, 244, 217));
 
-        createUserJButton.setFont(new java.awt.Font("Calibri Light", 0, 18)); // NOI18N
+        createUserJButton.setFont(new java.awt.Font("Calibri Light", 1, 18)); // NOI18N
         createUserJButton.setText("Create");
         createUserJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -157,13 +157,13 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
         jLabel3.setFont(new java.awt.Font("Calibri Light", 1, 18)); // NOI18N
         jLabel3.setText("Employee:");
 
-        employeeJComboBox.setFont(new java.awt.Font("Calibri Light", 0, 18)); // NOI18N
+        employeeJComboBox.setFont(new java.awt.Font("Calibri Light", 1, 18)); // NOI18N
         employeeJComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         jLabel5.setFont(new java.awt.Font("Calibri Light", 1, 18)); // NOI18N
         jLabel5.setText("Organization:");
 
-        organizationJComboBox.setFont(new java.awt.Font("Calibri Light", 0, 18)); // NOI18N
+        organizationJComboBox.setFont(new java.awt.Font("Calibri Light", 1, 18)); // NOI18N
         organizationJComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         organizationJComboBox.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -174,10 +174,10 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
         jLabel4.setFont(new java.awt.Font("Calibri Light", 1, 18)); // NOI18N
         jLabel4.setText("Role:");
 
-        roleJComboBox.setFont(new java.awt.Font("Calibri Light", 0, 18)); // NOI18N
+        roleJComboBox.setFont(new java.awt.Font("Calibri Light", 1, 18)); // NOI18N
         roleJComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
-        backJButton1.setFont(new java.awt.Font("Calibri Light", 0, 18)); // NOI18N
+        backJButton1.setFont(new java.awt.Font("Calibri Light", 1, 18)); // NOI18N
         backJButton1.setText("Back");
         backJButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -260,9 +260,9 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
             JOptionPane.showMessageDialog(null, "Can't be added. Input again!", "Blank password", JOptionPane.ERROR_MESSAGE);
         }
         else{
-        validitySystem=system.getUserAccountDirectory().checkIfUsernameIsUnique(userName);
+       validitySystem=business.getUserAccountDirectory().checkIfUsernameIsUnique(userName);
         
-        for(Network network:system.getNetworkList()){
+        for(Network network:business.getNetworkList()){
             for(Enterprise enterprise1:network.getEnterpriseDirectory().getEnterpriseList()){
                 validityEnterprise=enterprise1.getUserAccountDirectory().checkIfUsernameIsUnique(userName);
                 if(validityEnterprise==false)
@@ -270,7 +270,7 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
             }
         }
         
-        for(Network network:system.getNetworkList()){
+        for(Network network:business.getNetworkList()){
             for(Enterprise enterprise1:network.getEnterpriseDirectory().getEnterpriseList()){
                 for(Organization organization:enterprise1.getOrganizationDirectory().getOrganizationList()){
                     validityOrganization=organization.getUserAccountDirectory().checkIfUsernameIsUnique(userName);

@@ -13,10 +13,7 @@ import business.UserAccount.UserAccount;
 import javax.swing.JPanel;
 import userInterface.ConstructionManagerRole.ConstructionManagerWorkAreaJPanel;
 
-/**
- *
- * @author barkhasamyani
- */
+
 public class ConstructionManagerRole extends Role {
      public JPanel createWorkArea(JPanel userProcessContainer, UserAccount account, Organization organization, Enterprise enterprise, EcoSystem business) {
         return new ConstructionManagerWorkAreaJPanel(userProcessContainer, account, (ConstructionManagerOrganization)organization, enterprise,business);
