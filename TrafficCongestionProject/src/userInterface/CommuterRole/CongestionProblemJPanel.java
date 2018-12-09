@@ -9,11 +9,11 @@ import business.CongestionProblem.CongestionProblem;
 import business.CongestionProblem.CongestionProblemDirectory;
 import business.EcoSystem;
 import business.Enterprise.Enterprise;
-import business.Enterprise.EnterpriseDirectory;
 import business.Enterprise.InputEnterprise;
 import business.Location.Location;
 import business.Location.LocationDirectory;
 import business.Network.Network;
+import business.Organization.ConstructionManagerOrganization;
 import business.Organization.TrafficCongestionManagementOrganization;
 import business.Organization.Organization;
 import business.Route.Route;
@@ -39,8 +39,7 @@ public class CongestionProblemJPanel extends javax.swing.JPanel {
      */
 
     CongestionProblemJPanel(JPanel userProcessContainer, CongestionProblemDirectory congestionProblemDirectory, LocationDirectory locationDirectory, UserAccount userAccount, Enterprise enterprise, EcoSystem ecosystem) {
-      //  throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-     initComponents();
+        initComponents();
         this.userProcessContainer=userProcessContainer;
         this.userAccount=userAccount;
         this.locationDirectory=locationDirectory;
@@ -76,7 +75,6 @@ public class CongestionProblemJPanel extends javax.swing.JPanel {
         if(destinationLocation!=null)
         {
             for(Route route:destinationLocation.getRouteDirectory().getRouteList()){
-                
                 Object row[]=new Object[7];
                 row[0]=route;
                 row[1]=route.isCongestion();
@@ -109,17 +107,56 @@ public class CongestionProblemJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jScrollPane1 = new javax.swing.JScrollPane();
-        congestionProblemTable = new javax.swing.JTable();
-        btnReportProblem = new javax.swing.JButton();
+        jPanel1 = new javax.swing.JPanel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         destinationComboBox = new javax.swing.JComboBox();
+        btnReportProblem = new javax.swing.JButton();
         problemTypeComboBox = new javax.swing.JComboBox();
-        jLabel1 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        congestionProblemTable = new javax.swing.JTable();
         backJButton1 = new javax.swing.JButton();
-        jLabel6 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(234, 176, 150));
+
+        jPanel1.setBackground(new java.awt.Color(234, 176, 150));
+
+        jLabel3.setFont(new java.awt.Font("Calibri Light", 1, 18)); // NOI18N
+        jLabel3.setText("Source :");
+
+        jLabel1.setFont(new java.awt.Font("Calibri Light", 1, 18)); // NOI18N
+        jLabel1.setText("Problem Type:");
+
+        jLabel6.setFont(new java.awt.Font("Calibri Light", 1, 18)); // NOI18N
+        jLabel6.setText("Select Congestion Problem:");
+
+        jLabel5.setFont(new java.awt.Font("Calibri Light", 1, 18)); // NOI18N
+        jLabel5.setText("New York");
+
+        jLabel2.setFont(new java.awt.Font("Calibri Light", 1, 18)); // NOI18N
+        jLabel2.setText("Select Destination:");
+
+        destinationComboBox.setFont(new java.awt.Font("Calibri Light", 1, 18)); // NOI18N
+        destinationComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        destinationComboBox.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                destinationComboBoxActionPerformed(evt);
+            }
+        });
+
+        btnReportProblem.setFont(new java.awt.Font("Calibri Light", 1, 18)); // NOI18N
+        btnReportProblem.setText("Report Problem");
+        btnReportProblem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnReportProblemActionPerformed(evt);
+            }
+        });
+
+        problemTypeComboBox.setFont(new java.awt.Font("Calibri Light", 1, 18)); // NOI18N
+        problemTypeComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         congestionProblemTable.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         congestionProblemTable.setModel(new javax.swing.table.DefaultTableModel(
@@ -140,31 +177,6 @@ public class CongestionProblemJPanel extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(congestionProblemTable);
 
-        btnReportProblem.setFont(new java.awt.Font("Calibri Light", 1, 18)); // NOI18N
-        btnReportProblem.setText("Report Problem");
-        btnReportProblem.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnReportProblemActionPerformed(evt);
-            }
-        });
-
-        jLabel2.setFont(new java.awt.Font("Calibri Light", 1, 18)); // NOI18N
-        jLabel2.setText("Select Destination:");
-
-        destinationComboBox.setFont(new java.awt.Font("Calibri Light", 1, 18)); // NOI18N
-        destinationComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        destinationComboBox.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                destinationComboBoxActionPerformed(evt);
-            }
-        });
-
-        problemTypeComboBox.setFont(new java.awt.Font("Calibri Light", 1, 18)); // NOI18N
-        problemTypeComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-
-        jLabel1.setFont(new java.awt.Font("Calibri Light", 1, 18)); // NOI18N
-        jLabel1.setText("Problem Type:");
-
         backJButton1.setFont(new java.awt.Font("Calibri Light", 1, 18)); // NOI18N
         backJButton1.setText("Back");
         backJButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -173,63 +185,84 @@ public class CongestionProblemJPanel extends javax.swing.JPanel {
             }
         });
 
-        jLabel6.setFont(new java.awt.Font("Calibri Light", 1, 18)); // NOI18N
-        jLabel6.setText("Select Congestion Problem:");
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(127, 127, 127)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel1)
+                            .addComponent(backJButton1))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(btnReportProblem, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(problemTypeComboBox, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 550, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel6)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(106, 106, 106)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel3)
+                                .addGap(18, 18, 18)
+                                .addComponent(jLabel5))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel2)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(destinationComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addContainerGap())
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel6)
+                .addGap(27, 27, 27)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel3)
+                    .addComponent(jLabel5))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(destinationComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(problemTypeComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel1))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnReportProblem)
+                    .addComponent(backJButton1))
+                .addContainerGap())
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(116, 116, 116)
-                        .addComponent(jLabel2)
-                        .addGap(18, 18, 18)
-                        .addComponent(destinationComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(137, 137, 137)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel1)
-                            .addComponent(backJButton1))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnReportProblem)
-                            .addComponent(problemTypeComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 550, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel6)))
-                .addContainerGap(26, Short.MAX_VALUE))
+                .addContainerGap()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel6)
-                .addGap(26, 26, 26)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(destinationComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(problemTypeComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel1))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnReportProblem)
-                    .addComponent(backJButton1))
-                .addContainerGap(200, Short.MAX_VALUE))
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(105, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnReportProblemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnReportProblemActionPerformed
         // TODO add your handling code here:
-        int selectedRow=congestionProblemTable.getSelectedRow();
+     int selectedRow=congestionProblemTable.getSelectedRow();
         if(selectedRow>=0){
             Route route=(Route)congestionProblemTable.getValueAt(selectedRow,0);
             CongestionProblem congestionProblem=(CongestionProblem) problemTypeComboBox.getSelectedItem();
@@ -241,7 +274,6 @@ public class CongestionProblemJPanel extends javax.swing.JPanel {
             route.incrementProblemOccurence();
             congestionProblem.incrementProblemOccurrence();
             int decidingFactor=decideProblemType(test);
-            
             CongestionSolutionWorkRequest congestionSolutionWorkRequest=new CongestionSolutionWorkRequest();
             congestionSolutionWorkRequest.setRoute(route);
             congestionSolutionWorkRequest.setProblem(test);
@@ -272,6 +304,29 @@ public class CongestionProblemJPanel extends javax.swing.JPanel {
                     JOptionPane.showMessageDialog(null, "Congestion Problem reported successfully", "Succes", JOptionPane.INFORMATION_MESSAGE);
                 }
             }
+            else if(decidingFactor==0){
+                Organization org=null;
+                for(Network network:ecosystem.getNetworkList()){
+                    for(Enterprise enter:network.getEnterpriseDirectory().getEnterpriseList())
+                    {
+                        for(Organization organization : enter.getOrganizationDirectory().getOrganizationList()){
+                            if(organization instanceof ConstructionManagerOrganization){
+                                org=organization;
+                                
+                                break;
+                            }
+                        }
+                    }
+               }
+                    
+                if(org!=null){
+                    org.getWorkQueue().getWorkRequestList().add(congestionSolutionWorkRequest);
+                    userAccount.getWorkQueue().getWorkRequestList().add(congestionSolutionWorkRequest);
+                    populateFinalCongestionProblemTable();
+                    JOptionPane.showMessageDialog(null, "Congestion Problem reported successfully", "Succes", JOptionPane.INFORMATION_MESSAGE);
+
+                }
+            }
         }
         else{
             JOptionPane.showMessageDialog(null, "Congestion already Present", "Can't add new Congestion", JOptionPane.ERROR_MESSAGE);
@@ -287,7 +342,6 @@ public class CongestionProblemJPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_destinationComboBoxActionPerformed
 
     private void backJButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backJButton1ActionPerformed
-
         userProcessContainer.remove(this);
         CardLayout layout = (CardLayout) userProcessContainer.getLayout();
         layout.previous(userProcessContainer);
@@ -303,7 +357,10 @@ public class CongestionProblemJPanel extends javax.swing.JPanel {
     private javax.swing.JComboBox destinationComboBox;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JComboBox problemTypeComboBox;
     // End of variables declaration//GEN-END:variables

@@ -12,14 +12,14 @@ import business.Location.LocationDirectory;
 import java.awt.CardLayout;
 import javax.swing.JPanel;
 
-public class InputEnterpriseAdminJPanel extends javax.swing.JPanel {
+public class InputEnterpriseAdminJPanel_1 extends javax.swing.JPanel {
     
     JPanel userProcessContainer;
     Enterprise enterprise;
     EcoSystem system;
     private LocationDirectory locationDirectory;
     /** Creates new form AdminWorkAreaJPanel */
-    public InputEnterpriseAdminJPanel(JPanel userProcessContainer, Enterprise enterprise, EcoSystem system) {
+    public InputEnterpriseAdminJPanel_1(JPanel userProcessContainer, Enterprise enterprise, EcoSystem system) {
         initComponents();
         this.userProcessContainer = userProcessContainer;
         this.enterprise = enterprise;

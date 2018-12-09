@@ -25,6 +25,9 @@ public class Route implements Comparable<Route>{
     private CongestionProblem congestionProblem1;
     private int probCount=0;
 
+    Route() {
+         }
+
     public int getProbCount() {
         return probCount;
     }
@@ -141,5 +144,20 @@ public class Route implements Comparable<Route>{
         int qty=((Route)t).getProbCount();
         return qty-this.getProbCount();
     }
+
+    public Route(Route r) {
+        this.routeName=r.getRouteName();
+        this.distance = r.distance;
+        this.congestion=r.congestion;
+        this.congestionProblem=r.congestionProblem;
+        this.eventHandlerSolution=r.eventHandlerSolution;
+        this.requestDate=r.requestDate;
+        this.resolveDate=r.resolveDate;
+        this.sender=r.sender;
+        this.receiver=r.receiver;
+        this.congestionProblem1=r.congestionProblem1;
+    }
+    
+    
     
 }

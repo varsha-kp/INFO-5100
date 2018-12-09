@@ -5,8 +5,12 @@
  */
 package business.CongestionSolutionConstruction;
 
+
 public class CongestionSolutionConstruction {
     private String solutionName;
+
+   
+
 
     public String getSolutionName() {
         return solutionName;
@@ -15,6 +19,7 @@ public class CongestionSolutionConstruction {
     public void setSolutionName(String solutionName) {
         this.solutionName = solutionName;
     }
+   
 
     @Override
     public String toString() {
