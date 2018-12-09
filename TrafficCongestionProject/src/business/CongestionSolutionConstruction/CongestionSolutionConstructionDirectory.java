@@ -8,10 +8,6 @@ package business.CongestionSolutionConstruction;
 
 import java.util.ArrayList;
 
-/**
- *
- * @author Swarup
- */
 public class CongestionSolutionConstructionDirectory {
     private ArrayList<CongestionSolutionConstruction> congestionSolutionConstructionList;
 

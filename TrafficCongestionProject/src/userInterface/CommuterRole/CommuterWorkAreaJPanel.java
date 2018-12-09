@@ -23,19 +23,33 @@ public class CommuterWorkAreaJPanel extends javax.swing.JPanel {
     private UserAccount userAccount;
     private LocationDirectory locationDirectory;
     private CongestionProblemDirectory congestionProblemDirectory;
-    private EcoSystem business;
+    private EcoSystem business; 
     /**
      * Creates new form CarDriverWorkAreaJPanel
      */
-    public CommuterWorkAreaJPanel(JPanel userProcessContainer, UserAccount account, CommuterOrganization organization, Enterprise enterprise,EcoSystem business) {
-        initComponents();
+//    public CommuterWorkAreaJPanel(JPanel userProcessContainer, UserAccount account, CommuterOrganization organization, Enterprise enterprise) {
+//        initComponents();
+//        this.userProcessContainer = userProcessContainer;
+//        this.organization = organization;
+//        this.enterprise = enterprise;
+//        this.userAccount = account;
+//        locationDirectory=enterprise.getLocationDirectory();
+//        enterprise.addCongestionProblems();
+//        congestionProblemDirectory=enterprise.getCongestionProblemDirectory();
+//    }
+
+    public CommuterWorkAreaJPanel(JPanel userProcessContainer, UserAccount account, CommuterOrganization commuterOrganization, Enterprise enterprise, EcoSystem business) {
+       initComponents();
         this.userProcessContainer = userProcessContainer;
         this.organization = organization;
         this.enterprise = enterprise;
         this.userAccount = account;
+        this.business=business;
+        
         locationDirectory=enterprise.getLocationDirectory();
         enterprise.addCongestionProblems();
-        congestionProblemDirectory=enterprise.getCongestionProblemDirectory();
+        
+        congestionProblemDirectory=enterprise.getCongestionProblemDirectory();//To change body of generated methods, choose Tools | Templates.
     }
 
     /**
@@ -78,10 +92,10 @@ public class CommuterWorkAreaJPanel extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel1)
-                    .addComponent(btnCongestionProblem, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(btnGPS, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnCongestionProblem, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnGPS, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(167, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -89,11 +103,11 @@ public class CommuterWorkAreaJPanel extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel1)
-                .addGap(80, 80, 80)
+                .addGap(18, 18, 18)
                 .addComponent(btnGPS)
-                .addGap(38, 38, 38)
+                .addGap(18, 18, 18)
                 .addComponent(btnCongestionProblem)
-                .addContainerGap(115, Short.MAX_VALUE))
+                .addContainerGap(195, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
