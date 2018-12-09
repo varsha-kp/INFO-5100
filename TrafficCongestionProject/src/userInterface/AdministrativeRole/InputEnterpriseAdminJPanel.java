@@ -137,7 +137,7 @@ public class InputEnterpriseAdminJPanel extends javax.swing.JPanel {
                 .addContainerGap())
         );
 
-        btnManageBI.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        btnManageBI.setFont(new java.awt.Font("Calibri Light", 1, 18)); // NOI18N
         btnManageBI.setText("Business Intelligence");
         btnManageBI.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -155,7 +155,7 @@ public class InputEnterpriseAdminJPanel extends javax.swing.JPanel {
                         .addGap(68, 68, 68)
                         .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(174, 174, 174)
+                        .addGap(130, 130, 130)
                         .addComponent(btnManageBI, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(271, Short.MAX_VALUE))
         );
