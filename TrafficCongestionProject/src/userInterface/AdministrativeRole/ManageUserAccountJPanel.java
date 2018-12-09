@@ -9,7 +9,6 @@ import business.Employee.Employee;
 import business.Enterprise.Enterprise;
 import business.Network.Network;
 import business.Organization.Organization;
-import business.Role.TrafficCongestionManagementAdminRole;
 import business.Role.Role;
 import business.UserAccount.UserAccount;
 import java.awt.CardLayout;
@@ -95,7 +94,6 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
         jScrollPane1 = new javax.swing.JScrollPane();
         userJTable = new javax.swing.JTable();
         jLabel2 = new javax.swing.JLabel();
-        txtPassword = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         employeeJComboBox = new javax.swing.JComboBox();
         jLabel5 = new javax.swing.JLabel();
@@ -103,6 +101,7 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
         jLabel4 = new javax.swing.JLabel();
         roleJComboBox = new javax.swing.JComboBox();
         backJButton1 = new javax.swing.JButton();
+        txtPassword = new javax.swing.JPasswordField();
 
         setBackground(new java.awt.Color(252, 244, 217));
 
@@ -152,8 +151,6 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
         jLabel2.setFont(new java.awt.Font("Calibri Light", 1, 18)); // NOI18N
         jLabel2.setText("Password:");
 
-        txtPassword.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-
         jLabel3.setFont(new java.awt.Font("Calibri Light", 1, 18)); // NOI18N
         jLabel3.setText("Employee:");
 
@@ -202,12 +199,12 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
                                     .addComponent(jLabel1)
                                     .addComponent(jLabel2))
                                 .addGap(18, 18, 18)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(employeeJComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(organizationJComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(roleJComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txtUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txtPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(employeeJComboBox, 0, 146, Short.MAX_VALUE)
+                                    .addComponent(organizationJComboBox, 0, 146, Short.MAX_VALUE)
+                                    .addComponent(roleJComboBox, 0, 146, Short.MAX_VALUE)
+                                    .addComponent(txtUsername, javax.swing.GroupLayout.DEFAULT_SIZE, 146, Short.MAX_VALUE)
+                                    .addComponent(txtPassword)))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(backJButton1)
                                 .addGap(57, 57, 57)
@@ -240,8 +237,8 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
                     .addComponent(jLabel1))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel2))
+                    .addComponent(jLabel2)
+                    .addComponent(txtPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(backJButton1)
@@ -252,7 +249,7 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
 
     private void createUserJButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createUserJButtonActionPerformed
         String userName = txtUsername.getText();
-        String password = txtPassword.getText();
+        String password = new String(txtPassword.getPassword());
         if(userName.equals("")){
             JOptionPane.showMessageDialog(null, "Can't be added. Input again!", "Blank username", JOptionPane.ERROR_MESSAGE);
         }
@@ -327,7 +324,7 @@ public class ManageUserAccountJPanel extends javax.swing.JPanel {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JComboBox organizationJComboBox;
     private javax.swing.JComboBox roleJComboBox;
-    private javax.swing.JTextField txtPassword;
+    private javax.swing.JPasswordField txtPassword;
     private javax.swing.JTextField txtUsername;
     private javax.swing.JTable userJTable;
     // End of variables declaration//GEN-END:variables

@@ -86,7 +86,7 @@ public class ConstructionManagerWorkAreaJPanel extends javax.swing.JPanel {
         for(Organization og:enterprise.getOrganizationDirectory().getOrganizationList()){
         for(UserAccount ua:og.getUserAccountDirectory().getUserAccountList())
         {
-           if(ua.getRole().toString().equalsIgnoreCase("business.Role.ConstructionEmployee"))
+           if(ua.getRole().toString().equalsIgnoreCase("business.Role.ConstructionEmployeeRole"))
             {
                 constructionEmployeeComboBox.addItem(ua);
             }
@@ -244,7 +244,7 @@ public class ConstructionManagerWorkAreaJPanel extends javax.swing.JPanel {
                     org.getWorkQueue().getWorkRequestList().add(workRequest);
                     ua.getWorkQueue().getWorkRequestList().add(workRequest);
                    populateConstructionTable();
-                    JOptionPane.showMessageDialog(null, "Congestion Problem reported successfully", "Succes", JOptionPane.INFORMATION_MESSAGE);
+                    JOptionPane.showMessageDialog(null, "Congestion Problem assigned successfully", "Succes", JOptionPane.INFORMATION_MESSAGE);
                 }
             }
         }

@@ -51,10 +51,11 @@ public class GraphicalRepresentationJPanel extends javax.swing.JPanel {
         btnCongestionRoute = new javax.swing.JButton();
         backJButton1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
+        btnCongestionProblem = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(204, 204, 255));
 
-        btnCongestionRoute.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        btnCongestionRoute.setFont(new java.awt.Font("Calibri Light", 1, 18)); // NOI18N
         btnCongestionRoute.setText("Total Number of Congestions occured on each route");
         btnCongestionRoute.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -62,7 +63,7 @@ public class GraphicalRepresentationJPanel extends javax.swing.JPanel {
             }
         });
 
-        backJButton1.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        backJButton1.setFont(new java.awt.Font("Calibri Light", 0, 18)); // NOI18N
         backJButton1.setText("Back");
         backJButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -70,8 +71,16 @@ public class GraphicalRepresentationJPanel extends javax.swing.JPanel {
             }
         });
 
-        jLabel1.setFont(new java.awt.Font("Times New Roman", 3, 18)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Calibri Light", 3, 18)); // NOI18N
         jLabel1.setText("Graphical Representation:");
+
+        btnCongestionProblem.setFont(new java.awt.Font("Calibri Light", 1, 18)); // NOI18N
+        btnCongestionProblem.setText("Number of times Congestion Problem has occured");
+        btnCongestionProblem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCongestionProblemActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -79,11 +88,12 @@ public class GraphicalRepresentationJPanel extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(53, 53, 53)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(btnCongestionProblem, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(backJButton1)
                     .addComponent(jLabel1)
-                    .addComponent(btnCongestionRoute, javax.swing.GroupLayout.PREFERRED_SIZE, 443, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(269, Short.MAX_VALUE))
+                    .addComponent(btnCongestionRoute, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(259, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -92,9 +102,11 @@ public class GraphicalRepresentationJPanel extends javax.swing.JPanel {
                 .addComponent(jLabel1)
                 .addGap(18, 18, 18)
                 .addComponent(btnCongestionRoute)
-                .addGap(161, 161, 161)
+                .addGap(26, 26, 26)
+                .addComponent(btnCongestionProblem)
+                .addGap(104, 104, 104)
                 .addComponent(backJButton1)
-                .addContainerGap(162, Short.MAX_VALUE))
+                .addContainerGap(161, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -130,9 +142,34 @@ public class GraphicalRepresentationJPanel extends javax.swing.JPanel {
         layout.previous(userProcessContainer);
     }//GEN-LAST:event_backJButton1ActionPerformed
 
+    private void btnCongestionProblemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCongestionProblemActionPerformed
+        // TODO add your handling code here:
+        DefaultCategoryDataset chartData = new DefaultCategoryDataset();
+        for (CongestionProblem congestionProblem : congestionProblemDirectory.getCongestionProblemList())
+        {
+            chartData.setValue(congestionProblem.getProblemCongestionCount(), "Congestion Problem", congestionProblem.getProblemName());
+        }
+
+        JFreeChart barChart =ChartFactory.createBarChart("Number of times Congestion Problem occured", "Congestion Problem", "Problem Occurence", chartData, PlotOrientation.VERTICAL,false, true, false);
+        CategoryPlot chart = barChart.getCategoryPlot();
+
+        chart.setRangeGridlinePaint(Color.GREEN);
+
+        ChartPanel barPanel=new ChartPanel(barChart);
+        //        jPanel1.removeAll();
+        //        jPanel1.add(barPanel,BorderLayout.CENTER);
+        //        jPanel1.validate();
+
+        ChartFrame frame=new ChartFrame("Bar chart for CongestionProblem", barChart);
+        frame.setVisible(true);
+        frame.setSize(450, 350);
+
+    }//GEN-LAST:event_btnCongestionProblemActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton backJButton1;
+    private javax.swing.JButton btnCongestionProblem;
     private javax.swing.JButton btnCongestionRoute;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
