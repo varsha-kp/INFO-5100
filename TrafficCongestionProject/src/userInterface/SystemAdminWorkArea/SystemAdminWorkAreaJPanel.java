@@ -102,7 +102,7 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
 
         jPanel1.setBackground(new java.awt.Color(142, 210, 201));
 
-        manageNetworkJButton.setFont(new java.awt.Font("Calibri Light", 0, 18)); // NOI18N
+        manageNetworkJButton.setFont(new java.awt.Font("Calibri Light", 1, 18)); // NOI18N
         manageNetworkJButton.setText("Manage Network");
         manageNetworkJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -110,7 +110,7 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
             }
         });
 
-        manageAdminJButton.setFont(new java.awt.Font("Calibri Light", 0, 18)); // NOI18N
+        manageAdminJButton.setFont(new java.awt.Font("Calibri Light", 1, 18)); // NOI18N
         manageAdminJButton.setText("Manage Enterprise Admin");
         manageAdminJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -118,7 +118,7 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
             }
         });
 
-        manageEnterpriseJButton.setFont(new java.awt.Font("Calibri Light", 0, 18)); // NOI18N
+        manageEnterpriseJButton.setFont(new java.awt.Font("Calibri Light", 1, 18)); // NOI18N
         manageEnterpriseJButton.setText("Manage Enterprise");
         manageEnterpriseJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -126,7 +126,7 @@ public class SystemAdminWorkAreaJPanel extends javax.swing.JPanel {
             }
         });
 
-        jLabel1.setFont(new java.awt.Font("Calibri Light", 0, 18)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Calibri Light", 1, 18)); // NOI18N
         jLabel1.setText("Selected Node:");
 
         selectedNodeJLabel.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N

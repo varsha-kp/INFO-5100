@@ -92,7 +92,7 @@
             <Component class="javax.swing.JButton" name="manageNetworkJButton">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Calibri Light" size="18" style="0"/>
+                  <Font name="Calibri Light" size="18" style="1"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Manage Network"/>
               </Properties>
@@ -103,7 +103,7 @@
             <Component class="javax.swing.JButton" name="manageAdminJButton">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Calibri Light" size="18" style="0"/>
+                  <Font name="Calibri Light" size="18" style="1"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Manage Enterprise Admin"/>
               </Properties>
@@ -114,7 +114,7 @@
             <Component class="javax.swing.JButton" name="manageEnterpriseJButton">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Calibri Light" size="18" style="0"/>
+                  <Font name="Calibri Light" size="18" style="1"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Manage Enterprise"/>
               </Properties>
@@ -125,7 +125,7 @@
             <Component class="javax.swing.JLabel" name="jLabel1">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Calibri Light" size="18" style="0"/>
+                  <Font name="Calibri Light" size="18" style="1"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Selected Node:"/>
               </Properties>

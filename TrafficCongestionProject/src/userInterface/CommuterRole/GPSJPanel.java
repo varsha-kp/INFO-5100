@@ -50,10 +50,9 @@ public class GPSJPanel extends javax.swing.JPanel {
         if(destinationLocation!=null)
         {
             for(Route route:destinationLocation.getRouteDirectory().getRouteList()){
-                Object row[]=new Object[3];
+                Object row[]=new Object[2];
                 row[0]=route;
                 row[1]=route.isCongestion();
-                row[2]=route.getDistance();
                 defaultTableModel.addRow(row);
             }
         }
@@ -67,9 +66,8 @@ public class GPSJPanel extends javax.swing.JPanel {
         {
             for(Route route:destinationLocation.getRouteDirectory().getRouteList()){
                 if(route.isCongestion()==false){
-                    Object row[]=new Object[2];
+                    Object row[]=new Object[1];
                     row[0]=route;
-                    row[1]=route.getDistance();
                     defaultTableModel.addRow(row);
                 }
             }
@@ -118,17 +116,17 @@ public class GPSJPanel extends javax.swing.JPanel {
         jLabel7.setFont(new java.awt.Font("Calibri Light", 1, 18)); // NOI18N
         jLabel7.setText("Select Destination:");
 
-        routeTable.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        routeTable.setFont(new java.awt.Font("Calibri Light", 1, 18)); // NOI18N
         routeTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
             new String [] {
-                "Route name", "Congested?", "Distance"
+                "Route name", "Congested?"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false
+                false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -136,9 +134,6 @@ public class GPSJPanel extends javax.swing.JPanel {
             }
         });
         jScrollPane2.setViewportView(routeTable);
-        if (routeTable.getColumnModel().getColumnCount() > 0) {
-            routeTable.getColumnModel().getColumn(1).setHeaderValue("Congested?");
-        }
 
         bestRouteTable.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         bestRouteTable.setModel(new javax.swing.table.DefaultTableModel(
@@ -146,11 +141,11 @@ public class GPSJPanel extends javax.swing.JPanel {
 
             },
             new String [] {
-                "Route name", "Distance"
+                "Route name"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false
+                false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -170,7 +165,7 @@ public class GPSJPanel extends javax.swing.JPanel {
         jLabel4.setFont(new java.awt.Font("Calibri Light", 1, 18)); // NOI18N
         jLabel4.setText("Enjoy your ride through one of these routes");
 
-        jLabel6.setFont(new java.awt.Font("Calibri Light", 1, 18)); // NOI18N
+        jLabel6.setFont(new java.awt.Font("Calibri Light", 1, 24)); // NOI18N
         jLabel6.setText("Global Positioning System:");
 
         jLabel5.setFont(new java.awt.Font("Calibri Light", 1, 18)); // NOI18N
@@ -186,21 +181,20 @@ public class GPSJPanel extends javax.swing.JPanel {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel7)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(destinationComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(10, 10, 10)
-                        .addComponent(jLabel1)
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel5))
                     .addComponent(jLabel6)
                     .addComponent(jLabel3)
                     .addComponent(backJButton1)
                     .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 287, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel4)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 287, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 287, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel7)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(destinationComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel5)))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -212,7 +206,7 @@ public class GPSJPanel extends javax.swing.JPanel {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
                     .addComponent(jLabel5))
-                .addGap(12, 12, 12)
+                .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7)
                     .addComponent(destinationComboBox, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))

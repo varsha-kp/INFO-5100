@@ -23,18 +23,14 @@ public class EnterpriseDirectory {
         Enterprise enterprise = null;
         if (type == Enterprise.EnterpriseType.TrafficCongestionManagement){
             enterprise = new TrafficCongestionManagement(name);
-            enterpriseList.add(enterprise);
-            System.out.println(enterpriseList);
         }
     else  if (type == Enterprise.EnterpriseType.InputEnterprise){
             enterprise = new InputEnterprise(name);
             enterpriseList.add(enterprise);
-            System.out.println(enterpriseList);
         }
            else  if (type == Enterprise.EnterpriseType.ConstructionDepartment){
             enterprise = new ConstructionDepartment(name);
             enterpriseList.add(enterprise);
-            System.out.println(enterpriseList);
         } 
         return enterprise;
     }
