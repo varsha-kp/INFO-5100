@@ -90,17 +90,14 @@ public class SystemEngineerWorkAreaJPanel extends javax.swing.JPanel {
 //        defaultTableModel.setRowCount(0);
         
             
-                Object row[]=new Object[7];
+                Object row[]=new Object[5];
                 routeName=routeNameList.get(index);
                 row[0]=routeName;
                 row[1]="True";
                 test=congestionProblemList.get(index1);
                 row[2]=test;
                 row[3]=new Date();
-                row[4]="";
-                row[5]=userAccount;
-                row[6]="";
-//                row[2]=route.getDistance();
+                row[4]=userAccount;
                 defaultTableModel.addRow(row);
        }
     @SuppressWarnings("unchecked")
@@ -147,11 +144,11 @@ public class SystemEngineerWorkAreaJPanel extends javax.swing.JPanel {
 
             },
             new String [] {
-                "Route Name", "Congested?", "Type of Problem", "Start date", "End date", "Sender", "Receiver"
+                "Route Name", "Congested?", "Type of Problem", "Start date", "Sender"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false
+                false, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
