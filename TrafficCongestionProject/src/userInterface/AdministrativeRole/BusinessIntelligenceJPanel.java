@@ -95,42 +95,26 @@ public class BusinessIntelligenceJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        btnCongestedRoute = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
-        txtRoute = new javax.swing.JTextField();
-        backJButton1 = new javax.swing.JButton();
-        btnGraph = new javax.swing.JButton();
-        btnNumberOfCongestionsOnRoutes = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        btnCongestionProb = new javax.swing.JButton();
+        jPanel1 = new javax.swing.JPanel();
+        txtRoute = new javax.swing.JTextField();
+        btnGraph = new javax.swing.JButton();
         txtCongestion = new javax.swing.JTextField();
+        backJButton1 = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
         btnNumberOfCongestions = new javax.swing.JButton();
+        btnCongestedRoute = new javax.swing.JButton();
+        btnNumberOfCongestionsOnRoutes = new javax.swing.JButton();
+        btnCongestionProb = new javax.swing.JButton();
 
-        setBackground(new java.awt.Color(204, 204, 255));
+        setBackground(new java.awt.Color(0, 153, 204));
 
-        btnCongestedRoute.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        btnCongestedRoute.setText("Display Route that gets congested the most>>");
-        btnCongestedRoute.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCongestedRouteActionPerformed(evt);
-            }
-        });
-
-        jLabel1.setFont(new java.awt.Font("Times New Roman", 3, 18)); // NOI18N
-        jLabel1.setText("Business Intelligence:");
+        jPanel1.setBackground(new java.awt.Color(0, 153, 204));
 
         txtRoute.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
 
-        backJButton1.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        backJButton1.setText("Back");
-        backJButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                backJButton1ActionPerformed(evt);
-            }
-        });
-
-        btnGraph.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        btnGraph.setFont(new java.awt.Font("Calibri Light", 1, 18)); // NOI18N
         btnGraph.setText("Graphical Representation");
         btnGraph.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -138,25 +122,20 @@ public class BusinessIntelligenceJPanel extends javax.swing.JPanel {
             }
         });
 
-        btnNumberOfCongestionsOnRoutes.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        btnNumberOfCongestionsOnRoutes.setText("Total Number of Congestions on each Routes");
-        btnNumberOfCongestionsOnRoutes.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnNumberOfCongestionsOnRoutesActionPerformed(evt);
-            }
-        });
-
-        btnCongestionProb.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
-        btnCongestionProb.setText("Display Congestion Problem occuring the most>>");
-        btnCongestionProb.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCongestionProbActionPerformed(evt);
-            }
-        });
-
         txtCongestion.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
 
-        btnNumberOfCongestions.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        backJButton1.setFont(new java.awt.Font("Calibri Light", 1, 18)); // NOI18N
+        backJButton1.setText("Back");
+        backJButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                backJButton1ActionPerformed(evt);
+            }
+        });
+
+        jLabel1.setFont(new java.awt.Font("Calibri Light", 1, 24)); // NOI18N
+        jLabel1.setText("Business Intelligence:");
+
+        btnNumberOfCongestions.setFont(new java.awt.Font("Calibri Light", 1, 18)); // NOI18N
         btnNumberOfCongestions.setText("Total Number of times a Congestion took place");
         btnNumberOfCongestions.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -164,62 +143,101 @@ public class BusinessIntelligenceJPanel extends javax.swing.JPanel {
             }
         });
 
+        btnCongestedRoute.setFont(new java.awt.Font("Calibri Light", 1, 18)); // NOI18N
+        btnCongestedRoute.setText("Display Route that gets congested the most>>");
+        btnCongestedRoute.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCongestedRouteActionPerformed(evt);
+            }
+        });
+
+        btnNumberOfCongestionsOnRoutes.setFont(new java.awt.Font("Calibri Light", 1, 18)); // NOI18N
+        btnNumberOfCongestionsOnRoutes.setText("Total Number of Congestions on each Routes");
+        btnNumberOfCongestionsOnRoutes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnNumberOfCongestionsOnRoutesActionPerformed(evt);
+            }
+        });
+
+        btnCongestionProb.setFont(new java.awt.Font("Calibri Light", 1, 18)); // NOI18N
+        btnCongestionProb.setText("Display Congestion Problem occuring the most>>");
+        btnCongestionProb.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnCongestionProbActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(backJButton1)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(btnGraph, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnCongestedRoute, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnNumberOfCongestionsOnRoutes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnCongestionProb, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnNumberOfCongestions, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 429, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jLabel1)
+                                .addGap(27, 27, 27)))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(txtRoute)
+                            .addComponent(txtCongestion, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap())
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(18, 18, 18)
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnCongestedRoute)
+                    .addComponent(txtRoute, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(15, 15, 15)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(txtCongestion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnCongestionProb))
+                .addGap(18, 18, 18)
+                .addComponent(btnNumberOfCongestionsOnRoutes)
+                .addGap(18, 18, 18)
+                .addComponent(btnNumberOfCongestions)
+                .addGap(18, 18, 18)
+                .addComponent(btnGraph)
+                .addGap(89, 89, 89)
+                .addComponent(backJButton1)
+                .addContainerGap())
+        );
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(70, 70, 70)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(93, 93, 93)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(backJButton1)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(btnGraph, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(btnCongestedRoute, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 415, Short.MAX_VALUE)
-                            .addComponent(btnNumberOfCongestionsOnRoutes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btnCongestionProb, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btnNumberOfCongestions, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(txtRoute, javax.swing.GroupLayout.DEFAULT_SIZE, 180, Short.MAX_VALUE)
-                            .addComponent(txtCongestion))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel3)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING))))
-                .addContainerGap(26, Short.MAX_VALUE))
+                    .addComponent(jLabel3)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(46, 46, 46)
-                .addComponent(jLabel1)
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(btnCongestedRoute)
-                        .addComponent(txtRoute, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(15, 15, 15)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtCongestion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(btnCongestionProb))
-                        .addGap(18, 18, 18)
-                        .addComponent(btnNumberOfCongestionsOnRoutes)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnNumberOfCongestions)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnGraph)
-                        .addGap(89, 89, 89))
-                    .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel3)
-                        .addGap(275, 275, 275)))
-                .addComponent(backJButton1)
-                .addContainerGap(157, Short.MAX_VALUE))
+                .addGap(118, 118, 118)
+                .addComponent(jLabel2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel3)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 180, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -275,6 +293,7 @@ public class BusinessIntelligenceJPanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField txtCongestion;
     private javax.swing.JTextField txtRoute;
     // End of variables declaration//GEN-END:variables

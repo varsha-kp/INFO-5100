@@ -103,24 +103,24 @@ public class ManageEnterpriseJPanel extends javax.swing.JPanel {
         });
         jScrollPane1.setViewportView(enterpriseJTable);
 
-        jLabel1.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Calibri Light", 1, 18)); // NOI18N
         jLabel1.setText("Network:");
 
-        networkJComboBox.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        networkJComboBox.setFont(new java.awt.Font("Calibri Light", 1, 18)); // NOI18N
         networkJComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
-        jLabel2.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Calibri Light", 1, 18)); // NOI18N
         jLabel2.setText("Name:");
 
         txtEnterpriseName.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
 
-        jLabel3.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Calibri Light", 1, 18)); // NOI18N
         jLabel3.setText("Enterprise Type:");
 
-        enterpriseTypeJComboBox.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        enterpriseTypeJComboBox.setFont(new java.awt.Font("Calibri Light", 1, 18)); // NOI18N
         enterpriseTypeJComboBox.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
-        submitJButton.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        submitJButton.setFont(new java.awt.Font("Calibri Light", 1, 18)); // NOI18N
         submitJButton.setText("Submit");
         submitJButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -128,7 +128,7 @@ public class ManageEnterpriseJPanel extends javax.swing.JPanel {
             }
         });
 
-        backJButton2.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
+        backJButton2.setFont(new java.awt.Font("Calibri Light", 1, 18)); // NOI18N
         backJButton2.setText("Back");
         backJButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -136,7 +136,7 @@ public class ManageEnterpriseJPanel extends javax.swing.JPanel {
             }
         });
 
-        jLabel6.setFont(new java.awt.Font("Times New Roman", 3, 18)); // NOI18N
+        jLabel6.setFont(new java.awt.Font("Calibri Light", 1, 24)); // NOI18N
         jLabel6.setText("Manage Enterprise:");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -156,7 +156,7 @@ public class ManageEnterpriseJPanel extends javax.swing.JPanel {
                             .addComponent(jLabel3)
                             .addComponent(jLabel2)
                             .addComponent(backJButton2))
-                        .addGap(52, 52, 52)
+                        .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                 .addComponent(networkJComboBox, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -164,7 +164,7 @@ public class ManageEnterpriseJPanel extends javax.swing.JPanel {
                                 .addComponent(txtEnterpriseName, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(submitJButton)))
                     .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
+                        .addGap(202, 202, 202)
                         .addComponent(jLabel6)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -191,7 +191,7 @@ public class ManageEnterpriseJPanel extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(backJButton2)
                     .addComponent(submitJButton))
-                .addContainerGap(160, Short.MAX_VALUE))
+                .addContainerGap(150, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 

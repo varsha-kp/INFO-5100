@@ -48,12 +48,15 @@ public class GraphicalRepresentationJPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
         btnCongestionRoute = new javax.swing.JButton();
+        btnCongestionProblem = new javax.swing.JButton();
         backJButton1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
-        btnCongestionProblem = new javax.swing.JButton();
 
-        setBackground(new java.awt.Color(204, 204, 255));
+        setBackground(new java.awt.Color(0, 153, 204));
+
+        jPanel1.setBackground(new java.awt.Color(0, 153, 204));
 
         btnCongestionRoute.setFont(new java.awt.Font("Calibri Light", 1, 18)); // NOI18N
         btnCongestionRoute.setText("Total Number of Congestions occured on each route");
@@ -63,17 +66,6 @@ public class GraphicalRepresentationJPanel extends javax.swing.JPanel {
             }
         });
 
-        backJButton1.setFont(new java.awt.Font("Calibri Light", 0, 18)); // NOI18N
-        backJButton1.setText("Back");
-        backJButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                backJButton1ActionPerformed(evt);
-            }
-        });
-
-        jLabel1.setFont(new java.awt.Font("Calibri Light", 3, 18)); // NOI18N
-        jLabel1.setText("Graphical Representation:");
-
         btnCongestionProblem.setFont(new java.awt.Font("Calibri Light", 1, 18)); // NOI18N
         btnCongestionProblem.setText("Number of times Congestion Problem has occured");
         btnCongestionProblem.addActionListener(new java.awt.event.ActionListener() {
@@ -82,31 +74,57 @@ public class GraphicalRepresentationJPanel extends javax.swing.JPanel {
             }
         });
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(53, 53, 53)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+        backJButton1.setFont(new java.awt.Font("Calibri Light", 1, 18)); // NOI18N
+        backJButton1.setText("Back");
+        backJButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                backJButton1ActionPerformed(evt);
+            }
+        });
+
+        jLabel1.setFont(new java.awt.Font("Calibri Light", 1, 24)); // NOI18N
+        jLabel1.setText("Graphical Representation:");
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(btnCongestionProblem, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(backJButton1)
                     .addComponent(jLabel1)
-                    .addComponent(btnCongestionRoute, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(259, Short.MAX_VALUE))
+                    .addComponent(btnCongestionRoute))
+                .addContainerGap())
         );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(74, 74, 74)
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
                 .addComponent(jLabel1)
                 .addGap(18, 18, 18)
                 .addComponent(btnCongestionRoute)
                 .addGap(26, 26, 26)
                 .addComponent(btnCongestionProblem)
-                .addGap(104, 104, 104)
+                .addGap(27, 27, 27)
                 .addComponent(backJButton1)
-                .addContainerGap(161, Short.MAX_VALUE))
+                .addContainerGap())
+        );
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
+        this.setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 292, Short.MAX_VALUE))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 290, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -172,5 +190,6 @@ public class GraphicalRepresentationJPanel extends javax.swing.JPanel {
     private javax.swing.JButton btnCongestionProblem;
     private javax.swing.JButton btnCongestionRoute;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }
